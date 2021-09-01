@@ -16,7 +16,6 @@ services:
     app:
         build: .
         container_name: chapter3
-        restart: always
         volumes:
             - .:/usr/app
         ports:

@@ -24,7 +24,7 @@ class SpecificationsRepository implements ISpecificationRepository {
     findByName(name: string): Specification | undefined {
         return this.specifications.find((s) => s.name === name);
     }
-    list(): Specification[] {
+    async list(): Promise<Specification[]> {
         return this.specifications;
     }
     create({ name, description }: ICreateSpecificationDTO): void {

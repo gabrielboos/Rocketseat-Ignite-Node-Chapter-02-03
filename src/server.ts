@@ -1,4 +1,5 @@
 import createConnection from "./database";
+import "./shared/container";
 
 import express from "express";
 import swaggerUi from "swagger-ui-express";

@@ -4,7 +4,6 @@ import { ICategoriesRepository, ICreateCategoryDTO } from "../interfaces/ICatego
 
 
 class CategoriesRepository implements ICategoriesRepository {
-
     private repository: Repository<Category>;
 
     constructor() {

@@ -6,7 +6,7 @@ export default async (): Promise<Connection> => {
 
     return createConnection(
         Object.assign(defaultOptions, {
-            database: "database_ignite"
+            host: "database_ignite"
         })
     );
 };

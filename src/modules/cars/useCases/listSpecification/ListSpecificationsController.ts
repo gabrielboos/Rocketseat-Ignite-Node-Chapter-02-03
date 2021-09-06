@@ -4,9 +4,9 @@ import { container } from "tsyringe";
 
 class ListSpecificationsController {
 
-    handle(request: Request, response: Response) {
+    async handle(request: Request, response: Response) {
         const listSpecificationsUseCase = container.resolve(ListSpecificationsUseCase);
-        const all = listSpecificationsUseCase.execute();
+        const all = await listSpecificationsUseCase.execute();
         return response.status(201).json(all);
     }
 

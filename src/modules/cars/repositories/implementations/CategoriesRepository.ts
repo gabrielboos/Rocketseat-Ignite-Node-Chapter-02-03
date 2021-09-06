@@ -10,16 +10,6 @@ class CategoriesRepository implements ICategoriesRepository {
         this.repository = getRepository(Category);
     }
 
-    async create({ name, description }: ICreateCategoryDTO): Promise<void> {
-        const category: Category = this.repository.create(
-            {
-                name,
-                description
-            }
-        )
-        await this.repository.save(category);
-    }
-
     async list(): Promise<Category[]> {
         const categories = await this.repository.find();
         return categories;
@@ -28,6 +18,16 @@ class CategoriesRepository implements ICategoriesRepository {
     async findByName(name: string): Promise<Category | undefined> {
         const category = await this.repository.findOne({ name });
         return category;
+    }
+
+    async create({ name, description }: ICreateCategoryDTO): Promise<void> {
+        const category: Category = this.repository.create(
+            {
+                name,
+                description
+            }
+        )
+        await this.repository.save(category);
     }
 }
 
